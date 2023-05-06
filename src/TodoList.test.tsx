@@ -46,12 +46,12 @@ describe('TodoList', () => {
         render(<TodoList />);
 
         expect(screen.getAllByRole('listitem')).toHaveLength(2);
-        // expect(screen.getByText('Buy milk')).toBeInTheDocument();
-        // expect(screen.getByText('Buy eggs')).toBeInTheDocument();
+        expect(screen.getByText('Buy milk')).toBeInTheDocument();
+        expect(screen.getByText('Buy eggs')).toBeInTheDocument();
     });
 
     it('should add a new todo item', () => {
-        const handleAddTodoButtonClick = jest.fn(() => console.log("hello bees"));
+        const handleAddTodoButtonClick = jest.fn();
         (useTodoList as jest.Mock).mockReturnValue({
             items: [
                 { id: 1, text: 'Buy milk', completed: false },

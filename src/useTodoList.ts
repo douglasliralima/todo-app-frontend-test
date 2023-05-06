@@ -15,7 +15,6 @@ export const useTodoList = () => {
     }
 
     function handleAddTodoButtonClick() {
-        /* istanbul ignore else */
         if (newTodoText) {
             handleAddNewItem(newTodoText);
             setNewTodoText('');
